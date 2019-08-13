@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "9debff54-d4d3-4dc4-8c39-a59e135de8e5",
+		"name": "Applaudo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:62743/api/Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:62743/api/Products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62743",
+					"path": [
+						"api",
+						"Products"
+					]
+				},
+				"description": "Show All"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:62743/api/Products/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:62743/api/Products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62743",
+					"path": [
+						"api",
+						"Products",
+						"2"
+					]
+				},
+				"description": "Show 2nd Register"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:62743/api/Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"Sprite\",\r\n    \"description\": \"Refresco Carbonatado\",\r\n    \"price\": 0.75,\r\n    \"likes\": 8,\r\n    \"orderItems\": null\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:62743/api/Products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "62743",
+					"path": [
+						"api",
+						"Products"
+					]
+				},
+				"description": "Add New Product"
+			},
+			"response": []
+		}
+	]
+}
