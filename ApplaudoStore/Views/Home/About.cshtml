@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Add Products";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<p>Add Products (Administrator).</p>
+
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add Products</h3>
+            </div>
+            <div class="panel-body">
+                <table id="ProductTable" class="table table-striped table-bordered table-hover responsive" width="100%">
+                    <thead class="thin-border-bottom">
+                        <tr>
+                            <th>Product Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Likes</th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"></link>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        (function ($) {
+            var generateProductTable = $('#ProductTable')
+                .dataTable({
+
+
+
+
+                    "processing": true,
+                    "serverside": true,
+                    "ordering": true,
+                    "paging": true,
+                    "pagingType": "full_numbers",
+                    "pageLength": 3,
+
+                    "columns": [
+                        { "data": "productId" },
+                        { "data": "name" },
+                        { "data": "description" },
+                        { "data": "price" },
+                        { "data": "likes" }
+
+                        
+
+                    ],
+
+                    "ajax": {
+                        "url": "/api/Products",
+                        "dataSrc": '',
+                        "type": "GET",
+                        "contentType": "application/json;charset=UTF-8",
+                        "dataType": "json"
+                    },
+
+
+                });
+        }
+
+        )(jQuery);
+    </script>
+
+
+
+}
